@@ -79,7 +79,7 @@ module Github
             if res.code.to_i.between?(200,300)
                 puts "==========SUCCESS=========="
                 puts "repo_name: #{json["full_name"]}"
-                puts "url: #{json["url"]}"
+                puts "html_url: #{json["html_url"]}"
                 puts "git_url: #{json["git_url"]}"
                 puts "isPrivate: #{json["private"]}"
                 puts "description: #{json["description"]}"  if json["description"] != nil
