@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     cli-github (0.1.0)
-      highline
-      thor
+      highline (~> 1.7.10)
+      thor (~> 0.20.0)
 
 GEM
   remote: https://rubygems.org/
