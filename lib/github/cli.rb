@@ -23,12 +23,8 @@ module Github
     end
 
     class CLI < Thor
-        # option :from, type: :string, default: "none"
-        # def hello(name)
-        #     puts "Hello #{name} from #{options[:from]}"
-        # end
 
-        desc 'search QUERY', 'open github.com/search'
+        desc 'search [query]', 'open https://github.com/search?q=[query]'
         def search(query)
             exec("open https://github.com/search?q=#{query}")
         end
@@ -44,7 +40,7 @@ module Github
             `
         end
 
-        desc 'create github repo', 'create repository on GitHub'
+        desc 'create [repo_name]', 'create repository on GitHub'
         def create(repo_name)
             config = ConfigManager.load()
 
@@ -92,15 +88,10 @@ module Github
             end
         end
 
-
-        # option :from, type: :string, default: "none"
-        # def hello(name)
-        #     puts "Hello #{name} from #{options[:from]}"
-        # end
         option :token, type: :string, default: nil
         option :user_name, type: :string, default: nil
 
-        desc 'config (set|get)', 'config'
+        desc 'config [set|get]', 'config'
         def config(command)
             config = ConfigManager.load()
             case command
