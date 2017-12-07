@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require "cli/github/cli"
+require "github/cli"
 
 Github::CLI.start
