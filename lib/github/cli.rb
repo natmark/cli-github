@@ -8,7 +8,7 @@ module Github
     class ConfigManager
         @@JSON_FILE_PATH = ENV["HOME"] + '/.cli-github/config.json'
         def self.load
-            Dir.mkdir(ENV["HOME"] + '/.cli-github', 0755) unless File.directory?(@@JSON_FILE_PATH)
+            Dir.mkdir(ENV["HOME"] + '/.cli-github', 0755) unless Dir.exist?(ENV["HOME"] + '/.cli-github')
             ConfigManager.save({'token' => ''}) unless File.exist?(@@JSON_FILE_PATH)
 
             config = open(@@JSON_FILE_PATH) do |io|
